@@ -1,0 +1,18 @@
+$TTL 1d
+@ IN SOA ns1.home.local. root.home.local. (
+        2023010101      ; serial
+        28800           ; refresh (8 hours)
+        7200            ; retry (2 hours)
+        2419200         ; expire (4 weeks)
+        86400           ; minimum (1 day)
+)
+                NS      ns1.home.local.
+ns1             IN      A               127.0.0.1
+@               IN      A               1.2.3.4
+www             IN      CNAME   @
+@               IN      MX      1       aspmx.l.google.com.
+@               IN      MX      5       alt1.aspmx.l.google.com.
+@               IN      MX      5       alt2.aspmx.l.google.com.
+@               IN      MX      10      aspmx2.googlemail.com.
+@               IN      MX      10      aspmx3.googlemail.com.
+@               IN      TXT             "v=spf1 mx a include:_spf.google.com ~all"
